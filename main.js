@@ -1,19 +1,84 @@
 var canvas = document.getElementById('canvas')
 var context = canvas.getContext('2d')
+//初始化线条粗细
+var lineWidth = 5
 /*********************/
+//改变画笔颜色
+red.onclick = function() {
+    context.strokeStyle = 'red'
+    black.classList.remove('active')
+    red.classList.add('active')
+    green.classList.remove('active')
+    blue.classList.remove('active')
+}
+
+green.onclick = function() {
+    context.strokeStyle = 'green'
+    black.classList.remove('active')
+    red.classList.remove('active')
+    green.classList.add('active')
+    blue.classList.remove('active')
+}
+
+blue.onclick = function() {
+    context.strokeStyle = 'blue'
+    black.classList.remove('active')
+    red.classList.remove('active')
+    green.classList.remove('active')
+    blue.classList.add('active')
+}
+
+black.onclick = function() {
+    context.strokeStyle = 'black'
+    black.classList.add('active')
+    red.classList.remove('active')
+    green.classList.remove('active')
+    blue.classList.remove('active')
+}
+
+//改变画笔粗细
+thin.onclick = function() {
+    lineWidth = 5 
+}
+
+thick.onclick = function() {
+    lineWidth = 8  
+}
+
+//清空画板
+clear.onclick = function() {
+    context.clearRect(20,20,canvas.width,canvas.width);
+}
+
+//下载图片
+download.onclick = function() {
+    var url = canvas.toDataURL("image/png")
+    var a = document.createElement('a')
+    document.body.appendChild(a)
+    a.href = url
+    a.download = '我的画板'
+    a.target = '_blank'
+    a.click()
+}
+
+
+//开始
 autoSetCanvas(canvas)
 
 listenToUser(canvas)
 
 var eraserEnabled = false
+pen.onclick = function () {
+    eraserEnabled = false
+    pen.classList.add('active')
+    eraser.classList.remove('active')
+}
 eraser.onclick = function () {
 	eraserEnabled = true
-	actions.className = 'actions x'
+    eraser.classList.add('active')
+    pen.classList.remove('active')
 }
-brush.onclick = function () {
-	eraserEnabled = false
-	actions.className = 'actions'
-}
+
 
 
 function autoSetCanvas(canvas) {
@@ -30,18 +95,11 @@ function autoSetCanvas(canvas) {
 	}
 }
 
-function drawCircle(x,y,radius) {
-	context.beginPath()
-	context.fillStyle = 'black'
-	context.arc(x,y,radius,0,Math.PI*2)
-	context.fill()
-}
 
 function drawLine(x1,y1,x2,y2) {
 	context.beginPath()
-	context.strokeStyle = 'black'
     context.moveTo(x1,y1)  //起点
-    context.lineWidth = 5
+    context.lineWidth = lineWidth
     context.lineTo(x2,y2)  //终点
     context.stroke()
     context.closePath()

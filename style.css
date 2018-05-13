@@ -1,6 +1,26 @@
-body { margin: 0px;}
-#canvas { background-color: green; }
-.actions { position: absolute; left: 0; top: 0; }
-.actions #brush { display: none;}
-.actions.x #brush { display: inline-block; }
-.actions.x #eraser { display: none; }
+ol,ul { list-style: none; }
+*{ margin: 0; padding: 0; }
+.icon {
+	width: 1em; height: 1em;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
+}
+body { margin: 0px; overflow: hidden;}
+#canvas { display: block; }
+.actions { position: absolute; left: 0; top: 0; padding: 20px;}
+.actions svg { width: 1.5em; height: 1.5em; margin: 0 5px;}
+.actions svg.active { fill: red; transform: scale(1.2); transition: all 0.3s; }
+
+.colors { position: absolute; left: 16px; top: 50px;}
+.colors li { width: 20px; height: 20px; margin: 10px 0; border-radius: 50%; transition: all .3s;}
+.colors li.black { background-color: black; }
+.colors li.red{ background-color: red; }
+.colors li.green {background-color: green;}
+.colors li.blue {background-color: blue;}
+.colors li.active { box-shadow: 0px 0px 1px 1px #333; transform: scale(1.1); }
+
+.sizes { position: absolute; right: 10px; top: 0px; }
+.sizes li { margin: 20px 0; }
+.sizes li.thin { width: 20px; height: 0px; border-top: 2px solid #333; }
+.sizes li.thick { width: 20px; height: 0px; border-top: 8px solid #333; }
