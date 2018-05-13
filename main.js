@@ -47,7 +47,7 @@ thick.onclick = function() {
 
 //清空画板
 clear.onclick = function() {
-    context.clearRect(20,20,canvas.width,canvas.width);
+    context.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 //下载图片

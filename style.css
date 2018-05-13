@@ -7,7 +7,7 @@ ol,ul { list-style: none; }
 	overflow: hidden;
 }
 body { margin: 0px; overflow: hidden;}
-#canvas { display: block; }
+#canvas { display: block; position: fixed; top: 0; left: 0;}
 .actions { position: absolute; left: 0; top: 0; padding: 20px;}
 .actions svg { width: 1.5em; height: 1.5em; margin: 0 5px;}
 .actions svg.active { fill: red; transform: scale(1.2); transition: all 0.3s; }
