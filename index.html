@@ -4,24 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>我的画板</title>
-  <link rel="stylesheet" href="./style.css">
-  <script src="http://at.alicdn.com/t/font_664135_mfqgbevmzrara4i.js"></script>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/font/iconfont.css">
 </head>
 <body>
-  <canvas id='canvas' width='300px' height='300px'></canvas>
-  <div id='actions' class="actions">
-    <svg id='pen' class="active icon">
-        <use xlink:href="#icon-pencil"></use>
-    </svg>
-    <svg id='eraser' class="icon">
-        <use xlink:href="#icon-eraser"></use>
-    </svg>
-    <svg id='clear' class="icon">
-        <use xlink:href="#icon-clear"></use>
-    </svg>
-    <svg id='download' class="icon">
-        <use xlink:href="#icon-download"></use>
-    </svg>
+  <canvas id="canvas" width="300px" height="300px"></canvas>
+  <div class="actions">
+    <i id="pencil" class="iconfont icon-pencil active"></i>
+    <i id="eraser" class="iconfont icon-eraser"></i>
+    <i id="clear" class="iconfont icon-clear"></i>
+    <i id="download" class="iconfont icon-download"></i>
   </div>
   <ol class="colors">
     <li id="black" class="active black"></li>
@@ -34,6 +26,6 @@
     <li id="thick" class="thick"></li>
   </ol>
 
-  <script src="./main.js"></script>
+  <script src="./assets/js/main.js"></script>
 </body>
 </html>
